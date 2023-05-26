@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main-header {
+  margin:20px 50px;
+  /* display: flex;
+  justify-content: space-between;
+  gap:8px; */
+  /* background-color: rgb(239, 239, 82); */
+}
+.main-form {
+  /* margin:20px 50px; */
+  display: flex;
+  justify-content: space-between;
+  gap:8px;
+  margin-bottom: 40px;
+}
+.input-container {
+  width:20%;
+}
+
+.select-container{
+  width:25%;
+}
+tr,td {
+  padding: 5px;
+}
