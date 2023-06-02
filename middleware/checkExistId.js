@@ -1,10 +1,12 @@
 const database = require("../utils/database");
-const checkExistId = async (req, res, next) => {
+const checkExistIdVideo = async (req, res, next) => {
     try {
       const {id} = req.params; // Lấy ID từ tham số trong yêu cầu
-  
+      console.log(id);
       // Thực hiện truy vấn để kiểm tra ID tồn tại
-      let data = await database.execute(`SELECT * FROM task_keeper.tbl_task WHERE Task_id=${id}`);
+      const query = 'SELECT * FROM `clone-yt`.videos WHERE video_id = ?';
+      let data = await database.execute(query, [id])
+      // let data = await database.execute(`SELECT * FROM videos WHERE Task_id=${id}`);
       let [findTask] = data;
       if (findTask.length>0) {
         next();
@@ -18,4 +20,4 @@ const checkExistId = async (req, res, next) => {
     }
   };
 
-module.exports = checkExistId;
+module.exports = checkExistIdVideo;
